@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShop.Web", "OnlineShop.Web\OnlineShop.Web.csproj", "{B6F31689-8AA8-4CC6-A85F-C082E1308615}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShop.Core", "OnlineShop.Core\OnlineShop.Core.csproj", "{DECD99FF-CD7C-478F-9896-BBBEACE388E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShop.DataAccess", "OnlineShop.DataAccess\OnlineShop.DataAccess.csproj", "{8FAF2529-3001-4BE0-90EF-406BD6FE5CC8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6F31689-8AA8-4CC6-A85F-C082E1308615}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6F31689-8AA8-4CC6-A85F-C082E1308615}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6F31689-8AA8-4CC6-A85F-C082E1308615}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6F31689-8AA8-4CC6-A85F-C082E1308615}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DECD99FF-CD7C-478F-9896-BBBEACE388E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DECD99FF-CD7C-478F-9896-BBBEACE388E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DECD99FF-CD7C-478F-9896-BBBEACE388E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DECD99FF-CD7C-478F-9896-BBBEACE388E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FAF2529-3001-4BE0-90EF-406BD6FE5CC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FAF2529-3001-4BE0-90EF-406BD6FE5CC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FAF2529-3001-4BE0-90EF-406BD6FE5CC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FAF2529-3001-4BE0-90EF-406BD6FE5CC8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

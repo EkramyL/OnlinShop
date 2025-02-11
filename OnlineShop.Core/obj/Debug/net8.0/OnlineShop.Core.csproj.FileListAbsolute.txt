@@ -1,0 +1,11 @@
+C:\Users\msi\RiderProjects\OnlinShop\OnlineShop.Core\bin\Debug\net8.0\OnlineShop.Core.deps.json
+C:\Users\msi\RiderProjects\OnlinShop\OnlineShop.Core\bin\Debug\net8.0\OnlineShop.Core.dll
+C:\Users\msi\RiderProjects\OnlinShop\OnlineShop.Core\bin\Debug\net8.0\OnlineShop.Core.pdb
+C:\Users\msi\RiderProjects\OnlinShop\OnlineShop.Core\obj\Debug\net8.0\OnlineShop.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\msi\RiderProjects\OnlinShop\OnlineShop.Core\obj\Debug\net8.0\OnlineShop.Core.AssemblyInfoInputs.cache
+C:\Users\msi\RiderProjects\OnlinShop\OnlineShop.Core\obj\Debug\net8.0\OnlineShop.Core.AssemblyInfo.cs
+C:\Users\msi\RiderProjects\OnlinShop\OnlineShop.Core\obj\Debug\net8.0\OnlineShop.Core.csproj.CoreCompileInputs.cache
+C:\Users\msi\RiderProjects\OnlinShop\OnlineShop.Core\obj\Debug\net8.0\OnlineShop.Core.dll
+C:\Users\msi\RiderProjects\OnlinShop\OnlineShop.Core\obj\Debug\net8.0\refint\OnlineShop.Core.dll
+C:\Users\msi\RiderProjects\OnlinShop\OnlineShop.Core\obj\Debug\net8.0\OnlineShop.Core.pdb
+C:\Users\msi\RiderProjects\OnlinShop\OnlineShop.Core\obj\Debug\net8.0\ref\OnlineShop.Core.dll
