@@ -26,6 +26,26 @@ namespace OnlineShop.Web.Areas.Admin.Controllers
             return View(await _context.Products.ToListAsync());
         }
 
+        public IActionResult DeleteGallery(int id)
+        {
+            var productGallery = _context.ProductGalleries.FirstOrDefault(x => x.Id == id);
+            if (productGallery == null)
+            {
+                return NotFound();
+            }
+            var uploaderFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", "galleries");
+            var imagePath = Path.Combine(uploaderFolder, productGallery.ImageName);
+            if (System.IO.File.Exists(imagePath))
+            {
+                System.IO.File.Delete(imagePath);
+                
+            }
+            _context.ProductGalleries.Remove(productGallery);
+            _context.SaveChanges();
+            return Redirect($"edit/{productGallery.ProductId}");
+        }
+            
+        
         // GET: Admin/Product/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -126,7 +146,7 @@ namespace OnlineShop.Web.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,FullDesc,Price,Discount,ImageName,Qty,Tags,VideoUrl")] Product product)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,FullDesc,Price,Discount,ImageName,Qty,Tags,VideoUrl")] Product product, IFormFile? mainImage, IFormFile[]? galleryImages)
         {
             if (id != product.Id)
             {
@@ -135,11 +155,52 @@ namespace OnlineShop.Web.Areas.Admin.Controllers
 
             if (ModelState.IsValid)
             {
+                
+                
                 try
                 {
+                    // ****** Saving main Image ***** //
+                    if (mainImage != null)
+                    {
+                        product.ImageName = Guid.NewGuid().ToString() + Path.GetExtension(mainImage.FileName);
+                        var uploaderFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", "products");
+                        var imagePath = Path.Combine(uploaderFolder, product.ImageName);
+                        using (var stream = new FileStream(imagePath, FileMode.Create))
+                        {
+                            await mainImage.CopyToAsync(stream);
+                        }
+                   
+                    }
+                
+                
+                    // **************** Saving Gallery Images ******* //
+                
+                    if (galleryImages != null)
+                    {
+                        foreach (var item in galleryImages)
+                        {
+                            var newGallery = new ProductGallery();
+                            newGallery.ProductId = product.Id;
+                        
+                            // ------------- save each image ------------ //
+                            newGallery.ImageName = Guid.NewGuid().ToString() + Path.GetExtension(item.FileName);
+                            var uploaderFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", "galleries");
+                            var imagePath = Path.Combine(uploaderFolder, newGallery.ImageName);
+                            using (var stream = new FileStream(imagePath, FileMode.Create))
+                            {
+                                await item.CopyToAsync(stream);
+                            }
+                            _context.ProductGalleries.Add(newGallery);
+                      
+                        }
+                       
+                    }
+                
+                    // ====================================== //
                     _context.Update(product);
                     await _context.SaveChangesAsync();
                 }
+                
                 catch (DbUpdateConcurrencyException)
                 {
                     if (!ProductExists(product.Id))
@@ -151,6 +212,7 @@ namespace OnlineShop.Web.Areas.Admin.Controllers
                         throw;
                     }
                 }
+                
                 return RedirectToAction(nameof(Index));
             }
             return View(product);
@@ -182,6 +244,32 @@ namespace OnlineShop.Web.Areas.Admin.Controllers
             var product = await _context.Products.FindAsync(id);
             if (product != null)
             {
+                var uploaderFolderMain = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", "products");
+                var imagePathMain = Path.Combine(uploaderFolderMain, product.ImageName);
+                if (System.IO.File.Exists(imagePathMain))
+                {
+                    System.IO.File.Delete(imagePathMain);
+                
+                }
+                
+                var galleries = _context.ProductGalleries.Where(x => x.ProductId == id).ToList();
+                if (galleries != null)
+                {
+                    foreach (var item in galleries)
+                    {
+                        var uploaderFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", "galleries");
+                        var imagePath = Path.Combine(uploaderFolder, item.ImageName);
+                        if (System.IO.File.Exists(imagePath))
+                        {
+                            System.IO.File.Delete(imagePath);
+                
+                        }
+                        _context.ProductGalleries.Remove(item);
+                        
+                    }  
+                }
+                 
+                
                 _context.Products.Remove(product);
             }
 

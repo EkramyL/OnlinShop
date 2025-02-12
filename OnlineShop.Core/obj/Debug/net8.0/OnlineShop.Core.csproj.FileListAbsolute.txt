@@ -9,3 +9,4 @@ C:\Users\msi\RiderProjects\OnlinShop\OnlineShop.Core\obj\Debug\net8.0\OnlineShop
 C:\Users\msi\RiderProjects\OnlinShop\OnlineShop.Core\obj\Debug\net8.0\refint\OnlineShop.Core.dll
 C:\Users\msi\RiderProjects\OnlinShop\OnlineShop.Core\obj\Debug\net8.0\OnlineShop.Core.pdb
 C:\Users\msi\RiderProjects\OnlinShop\OnlineShop.Core\obj\Debug\net8.0\ref\OnlineShop.Core.dll
+C:\Users\msi\RiderProjects\OnlinShop\OnlineShop.Core\obj\Debug\net8.0\OnlineShop.Core.sourcelink.json

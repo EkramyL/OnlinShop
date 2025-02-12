@@ -15,3 +15,4 @@ C:\Users\msi\RiderProjects\OnlinShop\OnlineShop.DataAccess\obj\Debug\net8.0\Onli
 C:\Users\msi\RiderProjects\OnlinShop\OnlineShop.DataAccess\obj\Debug\net8.0\ref\OnlineShop.DataAccess.dll
 C:\Users\msi\RiderProjects\OnlinShop\OnlineShop.DataAccess\bin\Debug\net8.0\OnlineShop.DataAccess.runtimeconfig.json
 C:\Users\msi\RiderProjects\OnlinShop\OnlineShop.DataAccess\obj\Debug\net8.0\OnlineShop.DataAccess.genruntimeconfig.cache
+C:\Users\msi\RiderProjects\OnlinShop\OnlineShop.DataAccess\obj\Debug\net8.0\OnlineShop.DataAccess.sourcelink.json
